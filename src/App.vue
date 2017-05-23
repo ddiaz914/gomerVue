@@ -22,10 +22,6 @@ export default {
   components: {
     Countdown,
     NotesList
-  },
-  created(){
-    new Audio("/static/empty.mp3").play();
-    console.log("I was ready!");
   }
 }
 </script>
