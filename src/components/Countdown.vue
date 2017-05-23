@@ -1,9 +1,7 @@
 <template>
-  <div class="countdown valign-wrapper left">
-    <div class="center">
-      <h1><span>{{ minutes | addZero }}</span>:<span>{{ seconds | addZero }}</span></h1>
-      <button name="button" @click="countDown(1500)" class="btn">Start</button><button name="button" @click="countDown(300)" class="btn">Break</button>
-    </div>
+  <div class="">
+    <h1><span>{{ minutes | addZero }}</span>:<span>{{ seconds | addZero }}</span></h1>
+    <button name="button" @click="countDown(1500)" class="btn">Start</button><button name="button" @click="countDown(300)" class="btn">Break</button>
   </div>
 </template>
 
@@ -60,13 +58,6 @@ export default {
     font-size: 8rem;
   }
 
-  .countdown {
-    height: 50vh;
-    width: 100vw;
-    color: #FFFFFF;
-    background-color: #03A9F4;
-  }
-
   .btn {
     background-color: #34d99c;
     border-radius: 5px;
@@ -74,16 +65,5 @@ export default {
 
   .btn:first-of-type {
     margin-right: 2px;
-  }
-
-  .center {
-    margin: 0 auto;
-  }
-
-  @media only screen and (min-width : 1024px) {
-    .countdown {
-      height: 100vh;
-      width: 50vw;
-    }
   }
 </style>

@@ -1,14 +1,12 @@
 <template lang="html">
-  <div class="notes-list valign-wrapper right">
-    <div class="center">
-      <ul>
-        <note v-for="(note, index) in notes" :key="note" v-bind:description="note.description" v-on:remove="removeNote(index)"></note>
-      </ul>
-      <form action="index.html" method="post" v-on:submit.prevent="addNote()">
-        <input type="text" name="" value="" v-model="newNote" placeholder="Write anything you want to remember here.">
-        <button type="submit" name="button" class="btn">Add Note</button>
-      </form>
-    </div>
+  <div class="">
+    <ul>
+      <note v-for="(note, index) in notes" :key="note" v-bind:description="note.description" v-on:remove="removeNote(index)"></note>
+    </ul>
+    <form action="index.html" method="post" v-on:submit.prevent="addNote()">
+      <input type="text" name="" value="" v-model="newNote" placeholder="Write anything you want to remember here.">
+      <button type="submit" name="button" class="btn">Add Note</button>
+    </form>
   </div>
 </template>
 
@@ -44,11 +42,6 @@ export default {
 </script>
 
 <style scoped>
-  .notes-list {
-    height: 50vh;
-    width: 100vw;
-  }
-
   form {
     margin-top: 20px;
   }
@@ -56,16 +49,5 @@ export default {
   .btn {
     background-color: #34d99c;
     border-radius: 5px;
-  }
-
-  .center {
-    margin: 0 auto;
-  }
-
-  @media only screen and (min-width : 1024px) {
-    .notes-list {
-      height: 100vh;
-      width: 50vw;
-    }
   }
 </style>
