@@ -1,21 +1,5 @@
-# my-project
+# Gomer in Vue
 
-> test
+Gomer is a Pomodoro Technique influenced time tracker. This was inspired by my time at Dev Bootcamp. Many in the cohort would use this technique to stay motivated and make sure we were concentrating on the project at hand. The only thing I believed we were missing was somewhere to take notes, or add a to do for later, or just a reminder. That is what I set out to accomplish with Gomer.
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Created with HTML, Javascript, CSS, Vue, Materialize and a little love.
