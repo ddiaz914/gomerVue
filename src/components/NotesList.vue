@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="">
     <ul>
-      <note v-for="(note, index) in notes" :key="note" v-bind:description="note.description" v-on:remove="removeNote(index)"></note>
+      <note v-for="(note, index) in notes" :key="note" v-bind:description="note.description" v-bind:isComplete="note.isComplete" v-on:remove="removeNote(index)" v-on:complete="completeNote(index)"></note>
     </ul>
     <form action="index.html" method="post" v-on:submit.prevent="addNote()">
       <input type="text" name="" value="" v-model="newNote" placeholder="Write anything you want to remember here.">
@@ -21,7 +21,7 @@ export default {
   data(){
     return {
       newNote: "",
-      notes: []
+      notes: undefined
     }
   },
 
@@ -30,13 +30,28 @@ export default {
       if(this.newNote.length == 0){
         return;
       }
-      this.notes.push({ description: this.newNote})
+      this.notes.push({ description: this.newNote, isComplete: false});
       this.newNote = "";
     },
 
     removeNote(index){
       this.notes.splice(index, 1);
+    },
+
+    completeNote(index){
+      this.notes[index].isComplete == false ? this.notes[index].isComplete = true : this.notes[index].isComplete = false;
     }
+  },
+  mounted(){
+    if(localStorage.notes === undefined){
+      localStorage.setItem("notes", JSON.stringify([]));
+      this.notes = JSON.parse(localStorage.getItem("notes"));
+    } else {
+      this.notes = JSON.parse(localStorage.getItem("notes"));
+    }
+  },
+  updated(){
+    localStorage.setItem("notes", JSON.stringify(this.notes));
   }
 }
 </script>

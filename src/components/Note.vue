@@ -4,16 +4,17 @@
 
 <script>
 export default {
-  props: ["description"],
+  props: ["description", "isComplete"],
   data(){
     return {
       isActive: false,
-      finished: false
+      finished: this.isComplete
     }
   },
   methods: {
     complete(){
       this.finished == false ? this.finished = true : this.finished = false;
+      this.$emit('complete');
     },
     remove(){
       this.$emit('remove');
