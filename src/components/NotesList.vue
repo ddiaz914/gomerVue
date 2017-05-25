@@ -24,7 +24,6 @@ export default {
       notes: undefined
     }
   },
-
   methods: {
     addNote(){
       if(this.newNote.length == 0){
@@ -39,7 +38,7 @@ export default {
     },
 
     completeNote(index){
-      this.notes[index].isComplete == false ? this.notes[index].isComplete = true : this.notes[index].isComplete = false;
+      this.notes[index].isComplete = this.notes[index].isComplete == false;
     }
   },
   mounted(){
