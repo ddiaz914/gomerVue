@@ -8,12 +8,10 @@ export default {
   data(){
     return {
       isActive: false,
-      finished: this.isComplete
     }
   },
   methods: {
     complete(){
-      this.finished == false ? this.finished = true : this.finished = false;
       this.$emit('complete');
     },
     remove(){
@@ -24,6 +22,11 @@ export default {
     },
     fadeOut(){
       this.isActive = false;
+    }
+  },
+  computed: {
+    finished() {
+      return this.isComplete;
     }
   }
 }
