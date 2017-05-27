@@ -46,7 +46,6 @@ export default {
         new Audio("/static/sound.mp3").play();
         return;
       }
-
       this.displayTime(secondsLeft);
     }
   }
